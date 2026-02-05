@@ -28,7 +28,14 @@
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
     @media (max-width:900px){.grid{grid-template-columns:1fr}}
     .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
-    .tool{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:16px;padding:14px}
+    .tool{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
+}
+
     .tool h3{margin:0 0 6px}
     .small{font-size:12px;color:var(--muted);line-height:1.5}
     footer{margin:14px 2px 0;color:var(--muted);font-size:12px;line-height:1.6}
@@ -42,7 +49,35 @@
     <div class="brand">
       <div class="logo">UK</div>
       <div>
-        <div style="font-weight:900">Ukwebtools</div>
+        <div style="font-weight:900">Tools</div>
+
+<div class="tool" style="margin-top:12px">
+  <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">
+    <div>
+      <h3 style="margin:0 0 6px">ProfitPilot</h3>
+      <div class="small">
+        A seller-focused calculator to estimate profit, fees, and margin with editable presets.
+        Includes login, a 5-day free trial, and a one-time PRO unlock.
+      </div>
+    </div>
+    <span class="pill">Featured</span>
+  </div>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+    <a class="btn primary" href="https://profitpilot.ukwebtools.com/">Open ProfitPilot</a>
+    <a class="btn" href="https://profitpilot.ukwebtools.com/login.html">Start free trial</a>
+  </div>
+
+  <div class="small" style="margin-top:10px">
+    Best for: <b>dropshippers</b>, <b>marketplace sellers</b>, and anyone pricing products daily.
+  </div>
+</div>
+
+<div class="tool" style="margin-top:12px;opacity:.9">
+  <h3 style="margin:0 0 6px">More tools coming</h3>
+  <div class="small">Shipping estimator • VAT helper • ROI calculators • Bulk pricing helpers</div>
+</div>
+
         <div class="pill">Independent calculators • Practical tools</div>
       </div>
     </div>
