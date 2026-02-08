@@ -3,46 +3,204 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Terms — Ukwebtools</title>
+  <title>Terms & Conditions — Ukwebtools</title>
+  <meta name="description" content="Ukwebtools Terms & Conditions: using our tools, estimates disclaimer, payments, refunds, acceptable use, and PRO access rules.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <style>
-    body{margin:0;font-family:system-ui;background:#0b0f14;color:#eaf0ff}
-    .wrap{max-width:900px;margin:26px auto;padding:0 14px}
-    .card{background:#111826;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px}
-    h1{margin:0 0 10px} p,li{color:#9aa7bd;line-height:1.7}
-    a{color:#5eead4}
+    :root{
+      --bg:#f6f8fb; --bg2:#eef2ff; --txt:#0b1220; --muted:#5b6474;
+      --card:rgba(255,255,255,.92); --line:rgba(16,24,40,.10);
+      --accent:#0ea5a4; --accent2:#4f46e5; --shadow:0 10px 30px rgba(16,24,40,.08);
+      --warn:#f59e0b; --bad:#ef4444;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--txt);
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(14,165,164,.14), transparent 55%),
+        radial-gradient(900px 500px at 80% 0%, rgba(79,70,229,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+    }
+    a{color:var(--accent);text-decoration:none;font-weight:800}
+    .wrap{max-width:980px;margin:18px auto;padding:0 14px}
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+      background:rgba(255,255,255,.75);border:1px solid var(--line);
+      border-radius:18px;padding:12px;backdrop-filter:blur(10px);
+      box-shadow:var(--shadow);
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:40px;height:40px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(14,165,164,.18), rgba(79,70,229,.14));
+      border:1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;
+    }
+    .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .btn{
+      padding:10px 14px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.90);color:var(--txt);
+      font-weight:900;box-shadow:0 8px 18px rgba(16,24,40,.06);
+      display:inline-flex;gap:8px;align-items:center;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .card{
+      margin-top:14px;background:var(--card);border:1px solid var(--line);
+      border-radius:18px;padding:16px;box-shadow:var(--shadow);
+    }
+    h1{margin:0 0 6px;font-size:26px}
+    h2{margin:18px 0 8px;font-size:16px}
+    p,li{color:var(--muted);line-height:1.7}
+    ul{margin:8px 0 0;padding-left:18px}
+    .small{font-size:12px;color:var(--muted);line-height:1.6}
+    .pill{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 10px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.75);color:var(--muted);font-size:12px;
+      white-space:nowrap;
+    }
+    .callout{
+      border:1px solid rgba(245,158,11,.25);
+      background:rgba(245,158,11,.10);
+      border-radius:16px;
+      padding:12px;
+      margin-top:12px;
+    }
+    footer{margin:14px 2px 0;color:var(--muted);font-size:12px;line-height:1.6}
   </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="card">
-    <h1>Terms of Use</h1>
-    <p><b>Last updated:</b> <script>document.write(new Date().toISOString().slice(0,10));</script></p>
+  <div class="wrap">
 
-    <p>Ukwebtools provides independent calculators and tools for informational purposes only.</p>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">UK</div>
+        <div>
+          <div style="font-weight:900">Ukwebtools</div>
+          <div class="pill">Terms & Conditions</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a class="btn" href="/">Home</a>
+        <a class="btn" href="/privacy.html">Privacy</a>
+        <a class="btn" href="/faq.html">FAQ</a>
+      </div>
+    </div>
 
-    <h3>1) Estimates only</h3>
-    <p>All outputs are estimates based on user inputs and assumptions. Results may vary and are not guaranteed.</p>
+    <div class="card">
+      <h1>Terms & Conditions</h1>
+      <div class="small"><b>Last updated:</b> 08 Feb 2026</div>
 
-    <h3>2) No advice</h3>
-    <p>Our tools do not provide financial, legal, or tax advice. You are responsible for verifying fees, shipping costs, taxes, and platform rules.</p>
+      <p>
+        These Terms govern your use of Ukwebtools and its tools (including ProfitPilot). By accessing or using the site,
+        you agree to these Terms.
+      </p>
 
-    <h3>3) Independence</h3>
-    <p>We are not affiliated with or endorsed by any marketplace, platform, or payment provider. Any platform names are used for reference only.</p>
+      <h2>1) Who we are</h2>
+      <p>
+        “Ukwebtools”, “we”, “us” means the operators of ukwebtools.com and related subdomains.
+        For support, contact <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a>.
+      </p>
 
-    <h3>4) Acceptable use</h3>
-    <p>You agree not to misuse the site, attempt to disrupt service, or submit abusive/spam content.</p>
+      <h2>2) The service</h2>
+      <ul>
+        <li>We provide calculators and web tools intended to help you estimate outcomes based on information you input.</li>
+        <li>Tools may include free features and paid “PRO” features.</li>
+        <li>We may update, change, or remove features at any time to improve security and performance.</li>
+      </ul>
 
-    <h3>5) Purchases</h3>
-    <p>If you purchase paid access, it is a one-time purchase unless stated otherwise at checkout. We may use license codes or similar mechanisms to unlock access.</p>
+      <h2>3) Estimates only (important)</h2>
+      <div class="callout">
+        <p style="margin:0">
+          <b>All outputs are estimates only.</b> They depend entirely on your inputs and assumptions.
+          We do <b>not</b> guarantee profit, pricing success, sales, compliance, or any business outcome.
+          Nothing on Ukwebtools constitutes financial, legal, or tax advice.
+        </p>
+      </div>
 
-    <h3>6) Changes</h3>
-    <p>We may update features or these terms over time. Continued use means you accept the updated terms.</p>
+      <h2>4) Accounts</h2>
+      <ul>
+        <li>You are responsible for keeping your login details secure.</li>
+        <li>You must provide an email address you can access.</li>
+        <li>We may suspend access if we detect abuse, fraud, or attempts to bypass limits.</li>
+      </ul>
 
-    <h3>7) Contact</h3>
-    <p>Questions: <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a></p>
+      <h2>5) PRO access (one-time purchase)</h2>
+      <ul>
+        <li>PRO is a <b>one-time purchase</b> (not a subscription), unless explicitly stated otherwise on a pricing page.</li>
+        <li>PRO access is linked to your account/email and is intended for a single user.</li>
+        <li>You may not share, resell, transfer, or publicly distribute access methods, keys, or unlock mechanisms.</li>
+      </ul>
 
-    <p><a href="index.html">← Back</a></p>
+      <h2>6) Payments & taxes</h2>
+      <p>
+        Payments are processed by a <b>third-party payment processor</b> (for example Paddle, or another provider we may use from time to time).
+        The processor may calculate/collect taxes (including VAT) where required, and may act as merchant of record depending on the checkout configuration.
+      </p>
+      <p>
+        We do not store full payment card details. We may receive limited transaction information needed to provide access and support (e.g., payment status,
+        product purchased, purchaser email).
+      </p>
+
+      <h2>7) Refunds</h2>
+      <p>
+        We want the tools to feel safe to try. If you purchase PRO and experience a technical issue that prevents you from using core PRO features,
+        contact <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a> within <b>7 days</b> of purchase.
+        If we cannot resolve the issue within a reasonable time, we will support a refund request under the payment processor’s refund rules.
+      </p>
+      <p class="small">
+        Note: Refund handling and timing may depend on the payment processor’s policies and verification steps.
+      </p>
+
+      <h2>8) Acceptable use</h2>
+      <ul>
+        <li>Do not attempt to hack, scrape, overload, or reverse-engineer the service.</li>
+        <li>Do not bypass trial limits or access controls.</li>
+        <li>Do not use the site to break laws, infringe rights, or distribute malware.</li>
+        <li>Do not submit spam, hateful content, or deceptive reviews.</li>
+      </ul>
+
+      <h2>9) Reviews</h2>
+      <ul>
+        <li>Reviews submitted in tools may appear publicly.</li>
+        <li>We may remove reviews that are abusive, spammy, illegal, or clearly deceptive.</li>
+        <li>Do not claim “official affiliation” with marketplaces or platforms in reviews.</li>
+      </ul>
+
+      <h2>10) Intellectual property</h2>
+      <p>
+        Ukwebtools, its design, code, and content are protected by intellectual property laws.
+        You may not copy, resell, or redistribute the tools or code without permission.
+      </p>
+
+      <h2>11) Availability & changes</h2>
+      <p>
+        We aim for high uptime, but we do not guarantee uninterrupted availability.
+        We may change features, pricing pages, and limits to maintain quality and security.
+      </p>
+
+      <h2>12) Liability</h2>
+      <p>
+        To the maximum extent permitted by law, Ukwebtools is not liable for losses arising from your use of the tools,
+        including (without limitation) lost profits, business interruption, incorrect pricing decisions, or platform actions.
+      </p>
+
+      <h2>13) Governing law</h2>
+      <p>
+        These Terms are governed by the laws of England and Wales. Courts of England and Wales will have exclusive jurisdiction,
+        except where consumer protection laws provide otherwise.
+      </p>
+
+      <h2>14) Contact</h2>
+      <p>
+        Support: <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a>
+      </p>
+
+      <footer>© Ukwebtools</footer>
+    </div>
+
   </div>
-</div>
 </body>
 </html>
