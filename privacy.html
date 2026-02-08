@@ -3,43 +3,122 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Privacy — Ukwebtools</title>
+  <title>Privacy — ProfitPilot</title>
+  <meta name="description" content="Privacy policy for ProfitPilot by Ukwebtools.">
+  <link rel="icon" href="https://ukwebtools.com/favicon.svg" type="image/svg+xml">
   <style>
-    body{margin:0;font-family:system-ui;background:#0b0f14;color:#eaf0ff}
-    .wrap{max-width:900px;margin:26px auto;padding:0 14px}
-    .card{background:#111826;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px}
-    h1{margin:0 0 10px} p,li{color:#9aa7bd;line-height:1.7}
-    a{color:#5eead4}
+    :root{
+      --bg:#f7f9fc; --bg2:#eef3ff;
+      --txt:#0b1220; --muted:#5b6474;
+      --card:#fff; --line:rgba(16,24,40,.10);
+      --accent:#0ea5a4; --accent2:#4f46e5;
+      --shadow:0 14px 36px rgba(16,24,40,.08);
+      --shadow2:0 8px 22px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--txt);
+      background:
+        radial-gradient(900px 520px at 16% 0%, rgba(14,165,164,.14), transparent 55%),
+        radial-gradient(900px 520px at 84% 0%, rgba(79,70,229,.12), transparent 55%),
+        linear-gradient(180deg,var(--bg2),var(--bg));
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:18px 16px 50px}
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+      padding:10px 0;
+    }
+    .left{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .right{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .btn{
+      padding:10px 14px;border-radius:999px;border:1px solid var(--line);
+      background:#fff;box-shadow:var(--shadow2);
+      font-weight:700;font-size:14px;
+      display:inline-flex;gap:8px;align-items:center;
+    }
+    .btn.primary{border:none;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .card{
+      margin-top:14px;background:rgba(255,255,255,.75);
+      border:1px solid var(--line);border-radius:22px;padding:20px;
+      box-shadow:var(--shadow);
+    }
+    h1{margin:0 0 8px;font-size:28px;letter-spacing:-.02em}
+    h2{margin:20px 0 8px;font-size:18px}
+    p,li{color:var(--muted);line-height:1.75}
+    ul{margin:8px 0 0;padding-left:18px}
+    footer{
+      margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
+      text-align:center;color:var(--muted);font-size:12.5px;line-height:1.7;
+    }
+    .fine a{color:var(--accent);font-weight:800}
   </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="card">
-    <h1>Privacy Policy</h1>
-    <p><b>Last updated:</b> <script>document.write(new Date().toISOString().slice(0,10));</script></p>
+  <div class="wrap">
 
-    <p>Ukwebtools respects your privacy. This policy explains what we collect and how we use it.</p>
+    <!-- CONSISTENT NAV -->
+    <div class="nav">
+      <div class="left">
+        <a class="btn" href="https://ukwebtools.com/">← Ukwebtools</a>
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="privacy.html">Privacy</a>
+        <a class="btn" href="terms.html">Terms</a>
+      </div>
+      <div class="right">
+        <a class="btn primary" href="login.html">Log in</a>
+      </div>
+    </div>
 
-    <h3>1) Account data</h3>
-    <p>If a tool requires login, we store account information (such as email) via our authentication provider (Supabase).</p>
+    <div class="card">
+      <h1>Privacy Policy</h1>
+      <p style="margin:0 0 12px"><span style="font-size:12px;color:var(--muted)">Last updated: <span id="d"></span></span></p>
 
-    <h3>2) Tool usage</h3>
-    <p>We may store limited data needed to provide the service (for example: access status such as trial/paid). We do not sell your personal data.</p>
+      <p>
+        ProfitPilot is an independent tool by Ukwebtools. This policy explains what data we collect, how we use it, and your choices.
+      </p>
 
-    <h3>3) Reviews</h3>
-    <p>If you submit a review, it may be displayed publicly along with the name you provide (or “Anonymous” if you leave it blank). We may remove spam or abusive content.</p>
+      <h2>What we collect</h2>
+      <ul>
+        <li><b>Account email</b> (for login). Authentication is managed via Supabase.</li>
+        <li><b>Access data</b> needed to enforce trial/PRO status (e.g., trial start time, feature usage counters).</li>
+        <li><b>Reviews you submit</b> (name optional, rating, message). Reviews appear publicly.</li>
+      </ul>
 
-    <h3>4) Cookies</h3>
-    <p>Our tools may use essential cookies/local storage for login sessions and basic functionality.</p>
+      <h2>What we don’t collect</h2>
+      <ul>
+        <li>We do not collect card/payment details (checkout is handled by Gumroad).</li>
+        <li>We do not connect to your marketplace accounts.</li>
+      </ul>
 
-    <h3>5) Your choices</h3>
-    <p>You can request deletion of your account data by emailing us. Some records may be retained if required for security or fraud prevention.</p>
+      <h2>How we use information</h2>
+      <ul>
+        <li>To provide login, trial access, and PRO unlocking.</li>
+        <li>To prevent abuse and keep the product stable.</li>
+        <li>To display reviews publicly when submitted.</li>
+      </ul>
 
-    <h3>6) Contact</h3>
-    <p>Privacy questions: <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a></p>
+      <h2>Third parties</h2>
+      <ul>
+        <li><b>Supabase</b> for authentication and database storage.</li>
+        <li><b>Gumroad</b> for payments and license delivery.</li>
+      </ul>
 
-    <p><a href="index.html">← Back</a></p>
+      <h2>Account deletion</h2>
+      <p>
+        You can request deletion by emailing <a href="mailto:support@ukwebtools.com" style="color:var(--accent);font-weight:800">support@ukwebtools.com</a>.
+      </p>
+
+      <footer class="fine">
+        <div>© <span id="yr"></span> Ukwebtools • ProfitPilot</div>
+        <div><a href="terms.html">Terms</a> · <a href="https://profitpilot.ukwebtools.com/reviews.html">Reviews</a></div>
+      </footer>
+    </div>
   </div>
-</div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+    document.getElementById("d").textContent = new Date().toLocaleDateString();
+  </script>
 </body>
 </html>
