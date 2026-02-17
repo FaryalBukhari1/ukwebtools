@@ -3,27 +3,33 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
   <!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F12747YWBN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F12747YWBN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F12747YWBN', { anonymize_ip: true });
+  </script>
 
-  gtag('config', 'G-F12747YWBN', {
-    anonymize_ip: true
-  });
-</script>
+  <title>Terms & Conditions — ProfitPilot</title>
+  <meta name="description" content="ProfitPilot Terms & Conditions: service description, estimates disclaimer, payments via Paddle, refunds, acceptable use, and legal terms.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://profitpilot.ukwebtools.com/terms.html">
+  <link rel="icon" href="https://ukwebtools.com/favicon.svg" type="image/svg+xml">
 
-  <title>Terms & Conditions — UKwebtools</title>
-  <meta name="description" content="UKwebtools Terms & Conditions: using our tools, estimates disclaimer, payments, refunds, acceptable use, and PRO access rules.">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <style>
     :root{
       --bg:#f6f8fb; --bg2:#eef2ff; --txt:#0b1220; --muted:#5b6474;
       --card:rgba(255,255,255,.92); --line:rgba(16,24,40,.10);
       --accent:#0ea5a4; --accent2:#4f46e5; --shadow:0 10px 30px rgba(16,24,40,.08);
-      --warn:#f59e0b; --bad:#ef4444;
+      --warn:#f59e0b;
+      --radius:18px;
+      --f-bg:#0b0f14;
+      --f-line:rgba(255,255,255,.10);
+      --f-txt:rgba(255,255,255,.92);
+      --f-muted:rgba(255,255,255,.68);
     }
     *{box-sizing:border-box}
     body{
@@ -34,7 +40,20 @@
         linear-gradient(180deg, var(--bg2), var(--bg));
     }
     a{color:var(--accent);text-decoration:none;font-weight:800}
+    a:hover{text-decoration:underline}
+    :focus-visible{outline:3px solid rgba(79,70,229,.55);outline-offset:3px;border-radius:12px}
+
     .wrap{max-width:980px;margin:18px auto;padding:0 14px}
+
+    .skip{
+      position:absolute;left:-9999px;top:10px;
+      background:#fff;border:1px solid rgba(16,24,40,.14);
+      padding:10px 12px;border-radius:12px;
+      box-shadow:0 12px 24px rgba(16,24,40,.10);
+      z-index:1000;
+    }
+    .skip:focus{left:12px}
+
     .topbar{
       display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
       background:rgba(255,255,255,.75);border:1px solid var(--line);
@@ -47,7 +66,7 @@
       background:linear-gradient(135deg, rgba(14,165,164,.18), rgba(79,70,229,.14));
       border:1px solid var(--line);
       display:flex;align-items:center;justify-content:center;
-      font-weight:900;
+      font-weight:1000;
     }
     .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
     .btn{
@@ -56,23 +75,26 @@
       font-weight:900;box-shadow:0 8px 18px rgba(16,24,40,.06);
       display:inline-flex;gap:8px;align-items:center;
       white-space:nowrap;
+      transition:transform .08s ease;
     }
-    .btn:hover{transform:translateY(-1px)}
-    .card{
-      margin-top:14px;background:var(--card);border:1px solid var(--line);
-      border-radius:18px;padding:16px;box-shadow:var(--shadow);
-    }
-    h1{margin:0 0 6px;font-size:26px}
-    h2{margin:18px 0 8px;font-size:16px}
-    p,li{color:var(--muted);line-height:1.7}
-    ul{margin:8px 0 0;padding-left:18px}
-    .small{font-size:12px;color:var(--muted);line-height:1.6}
+    .btn:hover{transform:translateY(-1px);text-decoration:none}
+
     .pill{
       display:inline-flex;gap:8px;align-items:center;
       padding:8px 10px;border-radius:999px;border:1px solid var(--line);
-      background:rgba(255,255,255,.75);color:var(--muted);font-size:12px;
-      white-space:nowrap;
+      background:rgba(255,255,255,.75);color:rgba(16,24,40,.65);font-size:12px;
+      white-space:nowrap;font-weight:900;
     }
+
+    .card{
+      margin-top:14px;background:var(--card);border:1px solid var(--line);
+      border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);
+    }
+    h1{margin:0 0 6px;font-size:26px;letter-spacing:-.4px}
+    h2{margin:18px 0 8px;font-size:16px}
+    p,li{color:var(--muted);line-height:1.75}
+    ul{margin:8px 0 0;padding-left:18px}
+    .small{font-size:12px;color:rgba(16,24,40,.62);line-height:1.7}
     .callout{
       border:1px solid rgba(245,158,11,.25);
       background:rgba(245,158,11,.10);
@@ -80,55 +102,123 @@
       padding:12px;
       margin-top:12px;
     }
-    footer{margin:14px 2px 0;color:var(--muted);font-size:12px;line-height:1.6}
+    .divider{height:1px;background:var(--line);margin:14px 0}
+
+    /* Footer (Paddle crawl-friendly) */
+    .pp-footer{
+      margin-top:18px;
+      background:radial-gradient(900px 520px at 20% 0%, rgba(94,234,212,.10), transparent 55%),
+                 radial-gradient(900px 520px at 80% 0%, rgba(96,165,250,.10), transparent 55%),
+                 var(--f-bg);
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:22px 0;
+    }
+    .pp-footbox{
+      border:1px solid var(--f-line);
+      background:rgba(255,255,255,.04);
+      border-radius:18px;
+      padding:16px;
+      max-width:980px;
+      margin:0 auto;
+    }
+    .pp-footgrid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:16px;
+      align-items:start;
+      padding:0 14px;
+    }
+    @media(max-width:880px){.pp-footgrid{grid-template-columns:1fr}}
+    .pp-footbrand b{color:var(--f-txt);font-weight:1000}
+    .pp-footmut{
+      margin-top:8px;
+      color:var(--f-muted);
+      font-size:12.6px;
+      line-height:1.75;
+      max-width:760px;
+      font-weight:650;
+    }
+    .pp-footmut a{color:rgba(94,234,212,.95);font-weight:900}
+    .pp-footlinks{
+      display:flex;flex-wrap:wrap;gap:10px;
+      justify-content:flex-end;
+    }
+    @media(max-width:880px){.pp-footlinks{justify-content:flex-start}}
+    .pp-footlinks a{
+      padding:9px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.06);
+      color:var(--f-txt);
+      font-weight:900;
+      display:inline-flex;align-items:center;gap:8px;
+      transition:transform .08s ease;
+    }
+    .pp-footlinks a:hover{transform:translateY(-1px);text-decoration:none}
+    .pp-footbottom{
+      margin-top:14px;padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.10);
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;
+      color:rgba(255,255,255,.72);
+      font-size:12.5px;line-height:1.75;
+      padding:0 14px;
+    }
+    .pp-footbottom a{color:rgba(94,234,212,.95);font-weight:900}
+
+    @media (prefers-reduced-motion: reduce){
+      .btn,.pp-footlinks a{transition:none}
+      .btn:hover,.pp-footlinks a:hover{transform:none}
+    }
   </style>
 </head>
-<body>
-  <div class="wrap">
 
-    <div class="topbar">
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <div class="wrap" id="content" role="main">
+
+    <div class="topbar" role="navigation" aria-label="Primary">
       <div class="brand">
-        <div class="logo">UK</div>
+        <div class="logo">PP</div>
         <div>
-          <div style="font-weight:900">UKwebtools</div>
-          <div class="pill">Terms & Conditions</div>
+          <div style="font-weight:1000">ProfitPilot</div>
+          <div class="pill">Terms &amp; Conditions</div>
         </div>
       </div>
-      <div class="nav">
-        <a class="btn" href="/">Home</a>
-        <a class="btn" href="/privacy.html">Privacy</a>
-        <a class="btn" href="/faq.html">FAQ</a>
+
+      <div class="nav" aria-label="Navigation">
+        <a class="btn" href="https://profitpilot.ukwebtools.com/index.html">Home</a>
+        <a class="btn" href="https://profitpilot.ukwebtools.com/pricing.html">Pricing</a>
+        <a class="btn" href="https://profitpilot.ukwebtools.com/privacy.html">Privacy</a>
+        <a class="btn" href="https://profitpilot.ukwebtools.com/refunds.html">Refunds</a>
       </div>
     </div>
 
     <div class="card">
-      <h1>Terms & Conditions</h1>
-      <div class="small"><b>Last updated:</b> 08 Feb 2026</div>
+      <h1>Terms &amp; Conditions</h1>
+      <div class="small"><b>Last updated:</b> <span id="updatedText">08 Feb 2026</span></div>
 
       <p>
-        These Terms govern your use of UKwebtools and its tools (including ProfitPilot). By accessing or using the site,
-        you agree to these Terms.
+        These Terms govern your access to and use of ProfitPilot (the “Service”). By using the Service, you agree to these Terms.
       </p>
 
       <h2>1) Who we are</h2>
       <p>
-        “UKwebtools”, “we”, “us” means the operators of ukwebtools.com and related subdomains.
-        For support, contact <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a>.
+        ProfitPilot is operated by <b>Stonevia Commerce</b>.
+        Support: <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a>.
       </p>
 
-      <h2>2) The service</h2>
+      <h2>2) The Service</h2>
       <ul>
-        <li>We provide calculators and web tools intended to help you estimate outcomes based on information you input.</li>
-        <li>Tools may include free features and paid “PRO” features.</li>
-        <li>We may update, change, or remove features at any time to improve security and performance.</li>
+        <li>ProfitPilot provides calculators and tools to help you estimate outcomes based on the information you enter.</li>
+        <li>We may update, change, or remove features from time to time to improve security, performance, and usability.</li>
       </ul>
 
       <h2>3) Estimates only (important)</h2>
       <div class="callout">
-        <p style="margin:0">
-          <b>All outputs are estimates only.</b> They depend entirely on your inputs and assumptions.
-          We do <b>not</b> guarantee profit, pricing success, sales, compliance, or any business outcome.
-          Nothing on UKwebtools constitutes financial, legal, or tax advice.
+        <p style="margin:0;color:rgba(16,24,40,.72)">
+          <b>Outputs are estimates only.</b> They depend entirely on your inputs and assumptions.
+          We do <b>not</b> guarantee profit, pricing success, sales performance, compliance, or any business outcome.
+          Nothing on ProfitPilot constitutes financial, legal, or tax advice.
         </p>
       </div>
 
@@ -136,91 +226,104 @@
       <ul>
         <li>You are responsible for keeping your login details secure.</li>
         <li>You must provide an email address you can access.</li>
-        <li>We may suspend access if we detect abuse, fraud, or attempts to bypass limits.</li>
       </ul>
 
-      <h2>5) PRO access (one-time purchase)</h2>
+      <h2>5) Purchases / PRO access</h2>
       <ul>
-        <li>PRO is a <b>one-time purchase</b> (not a subscription), unless explicitly stated otherwise on a pricing page.</li>
-        <li>PRO access is linked to your account/email and is intended for a single user.</li>
-        <li>You may not share, resell, transfer, or publicly distribute access methods, keys, or unlock mechanisms.</li>
+        <li>If PRO is offered, it may be a one-time purchase or another plan type as shown on the pricing page at the time of purchase.</li>
+        <li>Access is provided to the purchasing account.</li>
       </ul>
 
-      <h2>6) Payments & taxes</h2>
+      <h2>6) Payments & Merchant of Record</h2>
       <p>
-        Payments are processed by a <b>third-party payment processor</b> (for example Paddle, or another provider we may use from time to time).
-        The processor may calculate/collect taxes (including VAT) where required, and may act as merchant of record depending on the checkout configuration.
-      </p>
-      <p>
-        We do not store full payment card details. We may receive limited transaction information needed to provide access and support (e.g., payment status,
-        product purchased, purchaser email).
+        Payments for ProfitPilot are processed by <b>Paddle</b>, who may act as Merchant of Record.
+        Paddle may calculate, collect, and remit taxes (including VAT) where required.
       </p>
 
-      <h2>7) Refunds</h2>
+      <h2>7) Refunds (Paddle-aligned)</h2>
       <p>
-        We want the tools to feel safe to try. If you purchase PRO and experience a technical issue that prevents you from using core PRO features,
-        contact <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a> within <b>7 days</b> of purchase.
-        If we cannot resolve the issue within a reasonable time, we will support a refund request under the payment processor’s refund rules.
+        Refunds are handled in accordance with Paddle’s Checkout Buyer Terms and applicable consumer protection laws.
+        If you are purchasing as a consumer, you may request a refund within <b>14 days</b> of purchase (the day after the transaction is completed).
       </p>
       <p class="small">
-        Note: Refund handling and timing may depend on the payment processor’s policies and verification steps.
+        How to request a refund: use your Paddle receipt email (recommended) or contact
+        <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a> with your purchase email and order reference.
+        Full details are on our <a href="https://profitpilot.ukwebtools.com/refunds.html">Refund Policy</a> page.
       </p>
 
       <h2>8) Acceptable use</h2>
       <ul>
-        <li>Do not attempt to hack, scrape, overload, or reverse-engineer the service.</li>
-        <li>Do not bypass trial limits or access controls.</li>
-        <li>Do not use the site to break laws, infringe rights, or distribute malware.</li>
-        <li>Do not submit spam, hateful content, or deceptive reviews.</li>
+        <li>Do not attempt to hack, scrape, overload, or interfere with the Service.</li>
+        <li>Do not bypass access controls or misuse account features.</li>
+        <li>Do not use the Service to break laws or distribute malware.</li>
       </ul>
 
-      <h2>9) Reviews</h2>
-      <ul>
-        <li>Reviews submitted in tools may appear publicly.</li>
-        <li>We may remove reviews that are abusive, spammy, illegal, or clearly deceptive.</li>
-        <li>Do not claim “official affiliation” with marketplaces or platforms in reviews.</li>
-      </ul>
-
-      <h2>10) Intellectual property</h2>
+      <h2>9) Intellectual property</h2>
       <p>
-        UKwebtools, its design, code, and content are protected by intellectual property laws.
-        You may not copy, resell, or redistribute the tools or code without permission.
+        ProfitPilot, its design, code, and content are protected by intellectual property laws.
+        You may not copy, resell, or redistribute the Service or its code without permission.
       </p>
 
-      <h2>11) Availability & changes</h2>
+      <h2>10) Availability & changes</h2>
       <p>
         We aim for high uptime, but we do not guarantee uninterrupted availability.
-        We may change features, pricing pages, and limits to maintain quality and security.
+        We may change features and pricing to maintain quality and security.
       </p>
 
-      <h2>12) Liability</h2>
+      <h2>11) Liability</h2>
       <p>
-        To the maximum extent permitted by law, UKwebtools is not liable for losses arising from your use of the tools,
-        including (without limitation) lost profits, business interruption, incorrect pricing decisions, or platform actions.
+        To the maximum extent permitted by law, we are not liable for losses arising from your use of the Service,
+        including (without limitation) lost profits, incorrect decisions based on estimates, or business interruption.
       </p>
 
-      <h2>13) Governing law</h2>
+      <h2>12) Governing law</h2>
       <p>
         These Terms are governed by the laws of England and Wales. Courts of England and Wales will have exclusive jurisdiction,
         except where consumer protection laws provide otherwise.
       </p>
 
-      <h2>14) Contact</h2>
-      <p>
-        Support: <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a>
+      <div class="divider"></div>
+
+      <p class="small" style="margin:0">
+        Contact: <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a>
       </p>
-
-      <footer>© UKwebtools</footer>
     </div>
-
   </div>
+
+  <!-- Footer (Paddle needs these links accessible + crawlable) -->
+  <footer class="pp-footer" role="contentinfo">
+    <div class="pp-footbox">
+      <div class="pp-footgrid">
+        <div class="pp-footbrand">
+          <div><b>ProfitPilot</b></div>
+          <div class="pp-footmut">
+            <b>Operator:</b> Stonevia Commerce.<br>
+            <b>Independent tool:</b> not affiliated with any marketplace/platform/payment provider.<br>
+            Need help? <a href="mailto:support@ukwebtools.com">support@ukwebtools.com</a>
+          </div>
+        </div>
+
+        <div class="pp-footlinks" aria-label="Footer links">
+          <a href="https://profitpilot.ukwebtools.com/index.html">Home</a>
+          <a href="https://profitpilot.ukwebtools.com/pricing.html">Pricing</a>
+          <a href="https://profitpilot.ukwebtools.com/refunds.html">Refund Policy</a>
+          <a href="https://profitpilot.ukwebtools.com/terms.html">Terms</a>
+          <a href="https://profitpilot.ukwebtools.com/privacy.html">Privacy</a>
+          <a href="https://profitpilot.ukwebtools.com/faq.html">FAQ</a>
+        </div>
+      </div>
+
+      <div class="pp-footbottom">
+        <div>© <span id="yr"></span> UKwebtools • ProfitPilot</div>
+        <div><a href="https://ukwebtools.com/" rel="nofollow">UKwebtools</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("yr").textContent = new Date().getFullYear();
+    // Keep your manual "Last updated" date above; this is just here if you want to auto-set later.
+  </script>
 </body>
 </html>
-<p>
-These Terms are provided by <b>Stonevia Commerce</b>, operating the ukwebtools.com.
-</p>
-
-
-<div>
-Legal entity: <b>Stonevia Commerce</b>
-</div>
